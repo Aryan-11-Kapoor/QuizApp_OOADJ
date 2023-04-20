@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome, <span th:text="${username}"></span></h1>
+    
+    <form th:action="@{/displayques}" method="get">
+		<input type="hidden" name="username" th:value="${username}"/>
+  <button type="submit" name="quizid" value="i1">Quiz 1</button>
+  <button type="submit" name="quizid" value="quiz2">Quiz 2</button>
+  <button type="submit" name="quizid" value="quiz3">Quiz 3</button>
+</form>
+<form th:action="@{/score}" method="get">
+	<input type="hidden" name="username" th:value="${username}"/>
+	<button type="submit" name="quizid" value="i1">SCore 1</button>
+	
+	
+</form>
+</body>
+</html>
