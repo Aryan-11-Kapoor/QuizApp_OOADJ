@@ -2,16 +2,34 @@
 <html xmlns:th="http://www.thymeLeaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Home Page</title>
+	<title >QUIZZINATOR</title>
 	<!-- Bootstrap CSS -->
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fyq8/OWZq5Xq+VMEbNFGi0G6Ubewj1UcNXzW2" crossorigin="anonymous">
-</head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></head>
+
 <body>
 	<div class="container">
-		<h1 class="mt-5 text-center">Welcome!</h1>
+				<h1 class="mt-5 text-center">QUIZZINATOR</h1>
+				<style>
+					body {
+					  background-image: url('C:\\Users\\aryan\\AppData\\Local\\Temp\\Temp1_vecteezy_background-sale-style-can-be-used-in-cover-design-book_16856981_27.zip\\vecteezy_background-sale-style-can-be-used-in-cover-design-book_16856981.jpg');
+					  background-repeat: no-repeat;
+                      background-attachment: fixed;
+                      background-size: cover;
+					}
+					h1{
+						color: aliceblue;
+						size-adjust: large;
+						font-size: 300%;
+						text-align: center;
+						font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+					}
+
+					</style>
 		<div class="row justify-content-center mt-5">
 			<div class="col-sm-6">
-				<a th:href="@{/register}" class="btn btn-primary btn-block mb-3">Register as Student</a>
+				<a th:href="@{/register}" class="btn btn-warning btn-lg btn-block " data-toggle="button" aria-pressed="false" autocomplete="off">Register as Student</a>
 				<a th:href="@{/login}" class="btn btn-success btn-block mb-3">Login as Student</a>
 			</div>
 			<div class="col-sm-6">
