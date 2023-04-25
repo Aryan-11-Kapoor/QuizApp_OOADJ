@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    
        
        <style>
 		   #timer {
@@ -178,6 +179,41 @@ label.container input:checked ~ .checkmark:after {
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
+}
+html {
+  height: 100%;
+}
+
+
+
+.button_slide {
+  color:#D80286;
+  border: 2px solid rgb(216, 2, 134);
+  border-radius: 0px;
+  padding: 18px 36px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D80286;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #D80286;
+  color: #fff;
+}
+
+
+#outer {
+  width: 364px;
+  margin: 50px auto 0 auto;
+  text-align: center;
 }
 
 </style>
@@ -207,6 +243,7 @@ if (distance <= 30000) {
    </head>
 
 <body>
+  <center>
 <div id="timer"></div>
 
 
@@ -236,8 +273,15 @@ if (distance <= 30000) {
 
   </li>
   </div>
-  <button type="submit">Submit</button>
+  <div id="outer">
+      
+     
+    <div class="button_slide slide_right" type="submit">SUBMIT </div>
+    <br /> <br /><br />
+    
+  </div>
 </form>
+</center>
 <!--<script>
     function setSelectedOption() {
         var selectedOption = document.querySelector('input[name="${ques.questionnum}"]:checked').value;
@@ -248,5 +292,4 @@ if (distance <= 30000) {
 
 </body>
 </html>
-
 
