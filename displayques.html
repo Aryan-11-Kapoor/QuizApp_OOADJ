@@ -5,6 +5,24 @@
     <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
        
        <style>
+		   #timer {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000;
+    background-color: rgb(192, 192, 192);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  #timer span {
+    font-weight: bold;
+    color: #000;
+  }
+		   
+		   
+		   
 .container {
   display: block;
   position: relative;
@@ -73,15 +91,127 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+body {
+  background-color: #f2f2f2;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0d8bf2;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Add a background color to the label when the checkbox is checked */
+label.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50px;
+}
+
+/* Style the checkmark */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+label.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+#timer {
+  display: inline-block;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #2196f3;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 </style>
+<script>
+    window.onload = function(){
+        var distance = 60000; // 1 minute in milliseconds
+
+var x = setInterval(function() {
+  var minutes = Math.floor(distance / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the timer in the format MM:SS
+  document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+if (distance <= 30000) {
+            document.getElementById("timer").style.backgroundColor = "red";
+        }
+  if (distance <= 0) {
+    clearInterval(x);
+    document.getElementById("myForm").submit();
+  } else {
+    distance -= 1000;
+  }
+}, 1000);
+    };
+</script>
 
    </head>
 
 <body>
+<div id="timer"></div>
 
 
 
-<form action="#" th:action="@{/mcqs}" method="post" th:object="${listques}">
+<form id="myForm" action="#" th:action="@{/mcqs}" method="post" th:object="${listques}">
   <div th:each="ques: ${listques}">
 	  <input type="hidden" name="username" th:value="${username}"/>
     
@@ -118,3 +248,5 @@
 
 </body>
 </html>
+
+
