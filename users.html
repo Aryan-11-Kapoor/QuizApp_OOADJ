@@ -2,13 +2,15 @@
 <html xmlns:th="http://www.thymeLeaf.org">
   <head>
     <meta charset="ISO-8859-1">
-    <title>All Users - Quizzinator</title>
+    <title>Professor's Dashboard</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <style>
+		
       body {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
+		
       }
 
       .container {
@@ -61,11 +63,65 @@
       button[type="submit"]:hover {
         background-color: #3e8e41;
       }
+	  p{
+		color: #3e8e41;
+	  }
+	  html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+	  
     </style>
   </head>
   <body>
+	<center>
+		<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+  
+</div>
     <div class="container text-center">        
-      <h1>Welcome to Quizzinator</h1>
+      <h1 style="color:whitesmoke;">DASHBOARD</h1>
       <input type="hidden" name="profid" th:value="${profid}" />
       <form th:action="@{/add}" method="get">
         <div>
@@ -74,6 +130,15 @@
         </div>
       </form>
     </div>
+</center>
+<center>
+<div>
+	<p>
+		_________________________________________________
+	</p>
+</div>
+</center>
+<center>
     <form th:action="@{/profscore}" method="get">
       <input type="hidden" name="profid" th:value="${profid}" />
       <button type="submit" name="quizid" value="i1">Quiz 1</button>
@@ -81,6 +146,15 @@
       <button type="submit" name="quizid" value="i3">Quiz 3</button>
       <button type="submit" name="quizid" value="i4">Quiz 4</button>
     </form>
+</center>
+<center>
+<div>
+	<p>
+		_________________________________________________
+	</p>
+</div>
+</center>
+	<center>
     <table style="width:40%">
       <thead>
         <tr>
@@ -106,8 +180,10 @@
 		<input type="text" id="questionnum" name="questionnum" placeholder="Question Num" required>
 		<button type="submit">Delete Question</button>
 	</form>
+</center>
+<center>
 	<div>
-		<h3>Display Ques</h3>
+		<h3>Display Question</h3>
 		<form th:action="@{/displayprofques}" method="get">
 				<input type="hidden" name="profid" th:value="${profid}" />
 		<button type="submit" name="quizid" value="i1">Quiz 1</button>
@@ -115,6 +191,13 @@
 		<button type="submit" name="quizid" value="i3">Quiz 3</button>
 		<button type="submit" name="quizid" value="i4">Quiz 4</button>
 		</form>
+		<center>
+<div>
+	<p>
+		_________________________________________________
+	</p>
+</div>
+</center>
 		<table style="width:40%">
         <thead>
             <tr>
@@ -131,6 +214,7 @@
             </tr>
         </tbody>
 	</div>
+</center>
 	</body>
 </html>
 	
